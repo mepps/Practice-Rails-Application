@@ -1,0 +1,13 @@
+<% content_for :title do %>Add a new post<% end %>
+
+<h1>New Post</h1>
+
+<form>
+	<label>Title</label>
+	<input type="text" name="title" /><br />
+	<label>Content</label>
+	<input type="text" name="content" /><br />
+	<input type="submit" value="New Post" />
+</form>
+
+<%= link_to 'Back', posts_path %>

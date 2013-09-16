@@ -1,0 +1,7 @@
+<% content_for :title do %>See user<% end %>
+
+<h1><%=@user.first_name%></h1>
+
+<%=@user.email_address%>
+
+<%= link_to 'Back', users_path %>

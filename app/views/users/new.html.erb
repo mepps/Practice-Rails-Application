@@ -1,0 +1,24 @@
+<% content_for :title do %>Add a new user<% end %>
+
+<h1>New User</h1>
+
+<div id="errors">
+	<% unless flash.alert == nil %>
+	<% flash.alert.each do |message| %>
+	<p><%=message + "." %> </p>
+	<% end 
+	end%>
+</div>
+
+<%= form_for @user, url: {action: "create"} do |f| %>
+	<%= label_tag :first_name %><br />
+	<%= f.text_field :first_name %><br />
+	<%= label_tag :last_name %><br />
+	<%= f.text_field :last_name %><br />
+	<%= label_tag :email_address %><br />
+	<%= f.text_field :email_address %><br />
+	<%= label_tag :password %><br />
+	<%= f.text_field :password %><br />
+	<%= f.submit "Add User" %>
+<% end %>
+<%= link_to 'Back', users_path %>

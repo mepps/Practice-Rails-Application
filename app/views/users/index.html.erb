@@ -1,0 +1,23 @@
+<% content_for :title do %>Display all users<% end %>
+
+<h1>All Users</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+<% @users.each do |user| %>
+		<tr>
+			<td><%= link_to "#{user.first_name}  #{user.last_name}", user%></td>
+			<td><%=user.email_address%></td>
+		</tr>
+<% end %>
+	</tbody>
+<table>
+
+<%= link_to 'New', new_user_path %><br />
+<%= link_to 'Posts', posts_path %>
